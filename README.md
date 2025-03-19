@@ -1,1 +1,1 @@
-Deliverable for Capstone Course
+## Deliverables for Capstone Course
