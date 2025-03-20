@@ -1,7 +1,44 @@
 import os
 from docx import Document
-from docx.shared import Pt
+from docx.shared import Pt, Inches
 from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.shared import RGBColor
+from datetime import datetime
+from docx.text.run import *
+
+def add_cover_page(doc, title):
+    # Add cover page
+    doc.add_paragraph().add_run().add_break()  # Add some space at top
+    
+    # Add title
+    paragraph = doc.add_paragraph()
+    paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    run = paragraph.add_run(title)
+    run.font.size = Pt(24)
+    run.font.bold = True
+    
+    # Add date
+    paragraph = doc.add_paragraph()
+    paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    run = paragraph.add_run(f"Date: {datetime.now().strftime('%B %d, %Y')}")
+    run.font.size = Pt(12)
+    
+    # Add page break
+    doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
+
+def add_table_of_contents(doc):
+    # Add TOC title
+    paragraph = doc.add_paragraph()
+    run = paragraph.add_run("Table of Contents")
+    run.font.size = Pt(16)
+    run.font.bold = True
+    
+    # Add placeholder for TOC
+    paragraph = doc.add_paragraph()
+    run = paragraph.add_run("Right-click here to update field.")
+    
+    # Add page break
+    doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
 
 def convert_md_to_docx():
     # Get all markdown files in the markdown directory
@@ -23,6 +60,15 @@ def convert_md_to_docx():
                     # Create a new Word document
                     doc = Document()
                     
+                    # Get document title from filename
+                    doc_title = filename.replace('.md', '').replace('_', ' ').title()
+                    
+                    # Add cover page
+                    add_cover_page(doc, doc_title)
+                    
+                    # Add table of contents
+                    # add_table_of_contents(doc)
+                    
                     # Read and process the markdown file
                     with open(md_path, 'r', encoding='utf-8') as md_file:
                         lines = md_file.readlines()
@@ -36,6 +82,8 @@ def convert_md_to_docx():
                                 run = paragraph.add_run(text)
                                 run.font.size = Pt(16 - level)  # Decrease size for deeper headers
                                 run.bold = True
+                                # Add header style for TOC
+                                paragraph.style = f'Heading {level}'
                                 
                             # Handle bullet points
                             elif line.strip().startswith('* ') and not line.strip().startswith('**'):
