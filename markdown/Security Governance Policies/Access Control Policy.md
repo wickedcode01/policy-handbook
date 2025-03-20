@@ -88,8 +88,7 @@ This policy applies to all forms of access to [Company Name]'s resources, includ
 Failure to comply with this policy may result in disciplinary action, up to and including termination of employment or contract, and potential legal action.
 
 ## 7. Revision History
-
-| Version | Date       | Author             | Description of Change |
-| :------ | :---------- | :----------------- | :-------------------- |
-| 1.0     | March 7, 2025 | Shijie Yin | Initial Policy Creation |
+| Version | Description of Change       | REVISION DATE              | AUTHOR  | APPROVED BY |APPROVED DATE|
+| :------ | :---------- | :----------------- | :-------------------- |:-------------------- |:-------------------- |
+| 1.0     | Initial Policy Creation |March 12, 2025  | Shijie Yin | Sairakesh Kagitha |March 20, 2025|
 

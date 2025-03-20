@@ -1,10 +1,13 @@
 import os
 from docx import Document
 from docx.shared import Pt, Inches
-from docx.enum.text import WD_ALIGN_PARAGRAPH
+from docx.enum.text import WD_ALIGN_PARAGRAPH, WD_BREAK
 from docx.shared import RGBColor
 from datetime import datetime
 from docx.text.run import *
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.oxml.text.paragraph import CT_P
 
 def add_cover_page(doc, title):
     # Add cover page
@@ -40,6 +43,70 @@ def add_table_of_contents(doc):
     # Add page break
     doc.add_paragraph().add_run().add_break(WD_BREAK.PAGE)
 
+def add_page_numbers(doc):
+    section = doc.sections[0]
+    section.different_first_page_header_footer = True
+    
+    footer = section.footer
+    paragraph = footer.paragraphs[0] if footer.paragraphs else footer.add_paragraph()
+    paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    
+    # Add "Page X of Y" format
+    run = paragraph.add_run('Page ')
+    
+    # Add page number (X)
+    run = paragraph.add_run()
+    fld_char1 = OxmlElement('w:fldChar')
+    fld_char1.set(qn('w:fldCharType'), 'begin')
+    run._element.append(fld_char1)
+    
+    instr_text = OxmlElement('w:instrText')
+    instr_text.set(qn('xml:space'), 'preserve')
+    instr_text.text = 'PAGE'
+    run._element.append(instr_text)
+    
+    fld_char2 = OxmlElement('w:fldChar')
+    fld_char2.set(qn('w:fldCharType'), 'end')
+    run._element.append(fld_char2)
+    
+
+def post_process(doc, filename):
+    try:
+        # Load the cover page template
+        cover_doc = Document('cover page.docx')
+        
+        # Create a new document for combining
+        combined_doc = Document()
+        
+        # Get policy name from filename
+        policy_name = filename.replace('.md', '').replace('_', ' ').title()
+        policy_version = "1.0.0"
+        
+        # Copy cover page content and replace placeholder "Policy Name & Version", f"{policy_name} {policy_version}"
+        # First, replace the placeholder text in the cover page document
+        for paragraph in cover_doc.paragraphs:
+            if "Policy Name & Version" in paragraph.text:
+                # Get all text elements (w:t) in the paragraph
+                for t in paragraph._element.xpath('.//w:t'):
+                    if "Policy Name & Version" in t.text:
+                        t.text = t.text.replace("Policy Name & Version", f"{policy_name} {policy_version}")
+        
+        # Now copy all elements to the combined document
+        for element in cover_doc.element.body:
+            combined_doc.element.body.append(element)
+        
+        # Copy main document content
+        for element in doc.element.body:
+            combined_doc.element.body.append(element)
+        
+        # Add page numbers
+        add_page_numbers(combined_doc)
+        
+        return combined_doc
+    except Exception as e:
+        print(f"Error combining with cover page: {str(e)}")
+        return doc
+
 def convert_md_to_docx():
     # Get all markdown files in the markdown directory
     markdown_dir = 'markdown'
@@ -64,7 +131,7 @@ def convert_md_to_docx():
                     doc_title = filename.replace('.md', '').replace('_', ' ').title()
                     
                     # Add cover page
-                    add_cover_page(doc, doc_title)
+                    # add_cover_page(doc, doc_title)
                     
                     # Add table of contents
                     # add_table_of_contents(doc)
@@ -188,8 +255,11 @@ def convert_md_to_docx():
                                     if text:
                                         paragraph.add_run(text)
                     
+                    # Combine with cover page
+                    final_doc = post_process(doc, filename)
+                    
                     # Save the Word document
-                    doc.save(docx_path)
+                    final_doc.save(docx_path)
                     print(f'Converted {md_path} to Word format')
 if __name__ == '__main__':
     convert_md_to_docx()

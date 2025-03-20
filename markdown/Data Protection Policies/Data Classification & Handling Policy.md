@@ -135,4 +135,6 @@ All policy changes must be approved by senior management before implementation.
 
 ## 6. Revision History
 
-
+| Version | Description of Change       | REVISION DATE              | AUTHOR  | APPROVED BY |APPROVED DATE|
+| :------ | :---------- | :----------------- | :-------------------- |:-------------------- |:-------------------- |
+| 1.0     | Initial Policy Creation |March 12, 2025  | Shijie Yin | Sairakesh Kagitha |March 20, 2025|

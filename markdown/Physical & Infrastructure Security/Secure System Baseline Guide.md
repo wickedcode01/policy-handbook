@@ -111,7 +111,6 @@ This guide applies to all systems and network devices owned, leased, or controll
 *   **All Personnel:** Are responsible for adhering to these baselines and reporting any security concerns.
 
 ## 6. Revision History
-
-| Version | Date       | Author      | Description of Change |
-| :------ | :---------- | :---------- | :-------------------- |
-| 1.0     | March 18, 2025 | Shijie Yin | Initial Guide Creation |
+| Version | Description of Change       | REVISION DATE              | AUTHOR  | APPROVED BY |APPROVED DATE|
+| :------ | :---------- | :----------------- | :-------------------- |:-------------------- |:-------------------- |
+| 1.0     | Initial Policy Creation |March 12, 2025  | Shijie Yin | Sairakesh Kagitha |March 20, 2025|

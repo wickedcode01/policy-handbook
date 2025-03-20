@@ -74,7 +74,6 @@ This policy applies to all software and operating systems running on [Company Na
 Failure to comply with this policy may result in disciplinary action.
 
 ## 7. Revision History
-
-| Version | Date       | Author             | Description of Change |
-| :------ | :---------- | :----------------- | :-------------------- |
-| 1.0     | March 18, 2025 | Shijie Yin | Initial Policy Creation |
+| Version | Description of Change       | REVISION DATE              | AUTHOR  | APPROVED BY |APPROVED DATE|
+| :------ | :---------- | :----------------- | :-------------------- |:-------------------- |:-------------------- |
+| 1.0     | Initial Policy Creation |March 12, 2025  | Shijie Yin | Sairakesh Kagitha |March 20, 2025|
