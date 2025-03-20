@@ -214,6 +214,20 @@ def convert_md_to_docx():
                                     for i, cell in enumerate(cells):
                                         table.cell(0, i).text = cell
                                         
+                                    # Add borders and gridlines to the table
+                                    for row in table.rows:
+                                        for cell in row.cells:
+                                            tcPr = cell._element.tcPr
+                                            tcBorders = OxmlElement('w:tcBorders')
+                                            for edge in ('top', 'left', 'bottom', 'right'):
+                                                border_el = OxmlElement(f'w:{edge}')
+                                                border_el.set(qn('w:val'), 'single')
+                                                border_el.set(qn('w:sz'), '4')
+                                                border_el.set(qn('w:space'), '0')
+                                                border_el.set(qn('w:color'), 'auto')
+                                                tcBorders.append(border_el)
+                                            tcPr.append(tcBorders)
+                                
                             # Regular text
                             else:
                                 if line.strip():
