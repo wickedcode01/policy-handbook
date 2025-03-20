@@ -1,8 +1,3 @@
-[Company Name]
-Acceptable Use Policy
-
-**Document Version:** 1.0
-**Date:** March 7, 2025
 
 ## 1. Overview
 

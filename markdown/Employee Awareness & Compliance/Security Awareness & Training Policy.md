@@ -1,9 +1,3 @@
-[Company Name]
-Security Awareness & Training Policy
-
-**Document Version:** 1.0
-**Date:** March 11, 2025
-
 ## 1. Overview
 
 This Security Awareness and Training Policy outlines [Company Name]'s commitment to educating employees, contractors, and vendors about information security risks and best practices. It establishes a program to ensure that all personnel understand their responsibilities in protecting company data and systems.

@@ -1,8 +1,3 @@
-[Company Name]
-Data Encryption & Key Management Policy
-
-**Document Version:** 1.0
-**Date:** March 18, 2025
 
 ## 1. Overview
 

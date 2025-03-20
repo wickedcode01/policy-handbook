@@ -1,9 +1,3 @@
-[Company Name]
-Incident Response Plan
-
-**Document Version:** 1.0
-**Date:** March 7, 2025
-
 ## 1. Overview
 
 This Incident Response Plan (IRP) outlines the procedures [Company Name] will follow in the event of a security incident. It provides a structured approach to identifying, containing, eradicating, and recovering from security incidents, minimizing their impact on the business. This plan applies to all employees, contractors, and vendors.

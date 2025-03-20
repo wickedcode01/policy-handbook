@@ -1,9 +1,3 @@
-[Company Name]
-Endpoint Security Policy
-
-**Document Version:** 1.0
-**Date:** March 11, 2025
-
 ## 1. Overview
 
 This Endpoint Security Policy defines the security requirements for all endpoints that connect to [Company Name]'s network or access company data. Endpoints include desktops, laptops, servers, tablets, smartphones, and any other devices used to access company resources. This policy aims to protect these devices and the data they store and process from threats. It applies to all employees, contractors, and vendors.

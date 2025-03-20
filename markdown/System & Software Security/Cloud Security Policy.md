@@ -1,8 +1,4 @@
-[Company Name]
-Cloud Security Policy
 
-**Document Version:** 1.0
-**Date:** March 18, 2025
 
 ## 1. Overview
 

@@ -1,9 +1,3 @@
-[Company Name]
-Data Classification & Handling Policy
-
-**Document Version:** 1.0
-**Date:** March 11, 2025
-
 ## 1. Overview
 
 This Data Classification and Handling Policy establishes a framework for classifying and protecting [Company Name]'s information assets based on their sensitivity and criticality. It defines how data should be handled, stored, transmitted, and disposed of to ensure its confidentiality, integrity, and availability. This policy applies to all employees, contractors, and vendors who handle company data.

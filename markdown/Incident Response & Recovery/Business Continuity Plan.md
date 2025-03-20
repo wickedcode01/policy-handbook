@@ -1,9 +1,3 @@
-[Company Name]
-Business Continuity Plan
-
-**Document Version:** 1.0
-**Date:** March 7, 2025
-
 ## 1. Overview
 
 This Business Continuity Plan (BCP) outlines the procedures [Company Name] will follow to maintain or resume critical business functions in the event of a disruption. It aims to minimize the impact of disruptions on operations, finances, and reputation. This plan applies to all employees and covers all critical business functions.

@@ -1,9 +1,3 @@
-[Company Name]
-Remote Work & BYOD Policy
-
-**Document Version:** 1.0
-**Date:** March 11, 2025
-
 ## 1. Overview
 
 This Remote Work and Bring Your Own Device (BYOD) Policy outlines the guidelines and requirements for employees, contractors, and vendors who work remotely or use personally-owned devices to access [Company Name]'s information systems, data, or networks. It aims to balance the flexibility of remote work and BYOD with the need to protect company information.

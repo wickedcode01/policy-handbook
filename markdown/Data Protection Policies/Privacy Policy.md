@@ -1,8 +1,3 @@
-[Company Name]
-Privacy Policy
-
-**Document Version:** 1.0
-**Date:** March 11, 2025
 
 ## 1. Overview
 

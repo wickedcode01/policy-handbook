@@ -86,10 +86,16 @@ def post_process(doc, filename):
         # First, replace the placeholder text in the cover page document
         for paragraph in cover_doc.paragraphs:
             if "Policy Name & Version" in paragraph.text:
-                # Get all text elements (w:t) in the paragraph
-                for t in paragraph._element.xpath('.//w:t'):
-                    if "Policy Name & Version" in t.text:
-                        t.text = t.text.replace("Policy Name & Version", f"{policy_name} {policy_version}")
+                # Clear the paragraph
+                p = paragraph._element
+                p.clear_content()
+                
+                # Add new run with text and set its format
+                new_run = paragraph.add_run(f"{policy_name} {policy_version}")
+                new_run.font.size = Pt(22)  # 设置字体大小
+                new_run.font.bold = True     # 如果需要粗体
+                new_run.font.name = "Times New Roman" # 如果需要设置字体
+                # new_run.font.color.rgb = RGBColor(0, 0, 0)  # 如果需要设置颜色
         
         # Now copy all elements to the combined document
         for element in cover_doc.element.body:

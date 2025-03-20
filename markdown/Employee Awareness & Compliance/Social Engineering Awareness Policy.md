@@ -1,9 +1,3 @@
-[Company Name]
-Social Engineering Awareness Policy
-
-**Document Version:** 1.0
-**Date:** March 18, 2025
-
 ## 1. Overview
 
 This Social Engineering Awareness Policy provides guidelines for recognizing and preventing social engineering attacks, such as phishing, impersonation, baiting, and other forms of fraud. It aims to educate all personnel about these threats and promote a culture of security awareness.
