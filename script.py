@@ -45,11 +45,11 @@ def add_table_of_contents(doc):
 
 def add_page_numbers(doc):
     section = doc.sections[0]
-    section.different_first_page_header_footer = True
+    # section.different_first_page_header_footer = True
     
     footer = section.footer
     paragraph = footer.paragraphs[0] if footer.paragraphs else footer.add_paragraph()
-    paragraph.alignment = WD_ALIGN_PARAGRAPH.CENTER
+    paragraph.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     
     # Add "Page X of Y" format
     run = paragraph.add_run('Page ')
@@ -68,7 +68,6 @@ def add_page_numbers(doc):
     fld_char2 = OxmlElement('w:fldChar')
     fld_char2.set(qn('w:fldCharType'), 'end')
     run._element.append(fld_char2)
-    
 
 def post_process(doc, filename):
     try:
